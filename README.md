@@ -1,6 +1,9 @@
-# Document By Example and Simple Python English
+# Python Show and Tell
 
 ## Summary
+
+Learning involves seeing evidence and building concepts.
+In other words, seeing examples and telling a story.
 
 DBE is a collection of Python code examples. SPE is
 intended to be a dialect for talking about DBE examples.
