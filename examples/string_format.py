@@ -1,44 +1,54 @@
 
 """
->>> print("Hello world, My name is {} and your name is {}. His name is {}".format("Ryan", "Bruce", "Dave"))
-Hello world, My name is Ryan and your name is Bruce. His name is Dave
+>>> "{} and his son {}, adopted a dog called {}".format("Mark", "David", "Michael")
+'Mark and his son David, adopted a dog called Michael'
 
-print("Hello world, My name is {0} and your name is {1}. His name is {2}".format("Ryan", "Bruce", "Dave"))
-Hello world, My name is Ryan and your name is Bruce. His name is Dave
+>>> "{0} and his son {1}, adopted a dog called {2}".format("Mark", "David", "Michael")
+'Mark and his son David, adopted a dog called Michael'
 
-print("Hello world, My name is {2} and your name is {0}. His name is {1}".format("Ryan", "Bruce", "Dave"))
-Hello world, My name is Dave and your name is Ryan. His name is Bruce
+>>> "{2} and his son {0}, adopted a dog called {1}".format("Mark", "David", "Michael")
+'Michael and his son Mark, adopted a dog called David'
 
-print("Hello world, My name is {2} and your name is {1}. His name is {}".format("Ryan", "Bruce", "Dave"))
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-ValueError: cannot switch from manual field specification to automatic field numbering
+>>> "{0} and his son {1}, adopted a dog called {}".format("Mark", "David", "Michael")
+Exception raised:
+      File "<doctest string_format[3]>", line 1, in <module>
+        "{0} and his son {1}, adopted a dog called {}".format("Mark", "David", "Michael")
+    ValueError: cannot switch from manual field specification to automatic field numbering
 
->>> print("The value of pi is {0:.3f}".format(3.14159)) 
-The value of pi is 3.142
->>> print("The value of pi is {0:.7f}".format(3.14159))
-The value of pi is 3.1415900
+>>> "{} and his son {1}, adopted a dog called {2}".format("Mark", "David", "Michael")
+Exception raised:
+       File "<doctest string_format[4]>", line 1, in <module>
+        "{} and his son {1}, adopted a dog called {2}".format("Mark", "David", "Michael")
+    ValueError: cannot switch from automatic field numbering to manual field specification
 
->>> from datetime import datetime
->>> today = datetime.now()
->>> print("The date today is {:%B %d, %Y}" .format(today))
-The date today is September 19, 2018
+>>> "The value of pi is {0:.3f}".format(3.14159)
+'The value of pi is 3.142'
+>>> "The value of pi is {0:.7f}".format(3.14159)
+'The value of pi is 3.1415900'
 
->>> print("Hello world, My name is {} and your name is {}. His name is {}".format(*list))
-Hello world, My name is Ryan and your name is Bruce. His name is Dave
+>>> from datetime import date
+>>> date_ = date(2018, 6, 10)
+>>> "The date is {:%B %d, %Y}" .format(date_)
+'The date is June 10, 2018'
 
->>> my_dict = {'Alice': 'December', 'Jack': 'February'}
->>> print('Alice was born in {Alice}, while Jack was born in {Jack}'.format(*my_dict))
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-KeyError: 'Alice'
->>> print('Alice was born in {Alice}, while Jack was born in {Jack}'.format(**my_dict))
-Alice was born in December, while Jack was born in February
+>>> 'The coordinates of this location are: {latitude}, {longitude}'.format(latitude='37.24N', longitude='-115.81W')
+'The coordinates of this location are: 37.24N, -115.81W'
 
+>>> fruit_quantity = (3, 5)
+>>> 'apples: {0[0]};  oranges: {0[1]}'.format(fruit_quantity)
+'apples: 3;  oranges: 5'
+
+>>> birth = {'Alice_month': 'December', 'Jack_month': 'February'}
+>>> 'Alice was born in {Alice_month}, while Jack was born in {Jack_month}'.format(*birth)
+Exception raised:
+File "<doctest string_format[10]>", line 1, in <module>
+        'Alice was born in {Alice_month}, while Jack was born in {Jack_month}'.format(*birth)
+    KeyError: 'Alice_month'
+>>> 'Alice was born in {Alice_month}, while Jack was born in {Jack_month}'.format(**birth)
+'Alice was born in December, while Jack was born in February'
 
 
 """
-
 
 
 
