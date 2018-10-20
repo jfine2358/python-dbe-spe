@@ -62,3 +62,87 @@ for aircraft maintenance manuals.
 **Simple Python English** wishes to do something 
 similar, but for Python. It is the companion to
 the DBE examples.
+
+## Instructions for novices to contribute
+
+1. **Install** Python 3
+
+	Follow the instructions here https://www.python.org/downloads/
+
+2. **Create** a Github account if you don't already have one
+
+	https://github.com/join?source=header-home
+
+3. **Fork** the repo on GitHub
+
+	 Fork this repo by clicking on the fork button on the top of the page. This will create a copy of this repository in your account.
+ 
+4. **Clone** the project to your own machine. 
+
+	Open a terminal and run the following git command:
+
+```
+git clone "https://github.com/username/python-show-and-tell.git"
+```
+
+	where you need to replace "username" in the url above with your github username
+
+5. Add links to your remote repositories: your forked repo and the original repository
+
+```
+  git remote add origin "https://github.com/username/python-show-and-tell.git"
+
+  git remote add upstream "https://github.com/jfine2358/python-show-and-tell.git"
+```
+
+	This is a way of telling git that other versions of this project exists in the specified urls and we’re calling the forked version ```origin``` and original repo ```upstream``` respectively
+
+6. **Create** a new branch and checkout into that branch
+
+```
+cd first-contributions
+git checkout -b <add-branch-name>
+```
+
+7. Make necessary changes and **Commit** those changes
+
+```
+
+git add Contributors.md
+
+git commit -m "Add <your-name> to Contributors list"
+```
+
+8. **Push** your work back up to your fork
+
+```
+ git push origin <add-your-name>
+```
+
+9. Submit a **Pull request** so that we can review your changes
+
+	If you go to your repository on GitHub, you’ll see a Compare & pull request button. 
+	Click on that button and Create Pull Request.
+
+	NOTE: Be sure to merge the latest from "upstream" before making a pull request!
+
+```git pull upstream <your branch name>```
+
+10. Keeping your fork synced with this repository
+
+	* First, switch to the master branch.
+
+```git checkout master```
+
+	* Fetch and merge the new version of my repository after pull request is merged:
+```git fetch upstream```
+
+	Here we’re fetching all the changes in my fork (upstream remote). 
+	Now, you need to merge the new revision of my repository into your master branch.
+
+```git merge upstream/master```
+
+ 	* Push the master branch now, your fork will also have the changes:
+
+```git push origin master```
+
